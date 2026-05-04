@@ -1,0 +1,56 @@
+{
+  "name": "Play Anywhere Spring Launch",
+  "brand": "PocketForge",
+  "market": "United States",
+  "region": "en-US",
+  "audience": "Adults 25–44 who grew up with handheld and console games",
+  "message": "Relive classic gaming moments anywhere.",
+  "products": [
+    {
+      "name": "PocketForge Mini",
+      "positioning": "Ultra-pocketable retro handheld for quick nostalgic gaming sessions",
+      "features": [
+        "3.5\" IPS display",
+        "3000+ games supported",
+        "Wi-Fi connectivity",
+        "5+ hour battery"
+      ],
+      "asset": "pocketforge-mini.png"
+    },
+    {
+      "name": "PocketForge XL",
+      "positioning": "Larger-screen handheld for extended play and travel comfort",
+      "features": [
+        "4.7\" IPS display",
+        "3000+ games supported",
+        "Wi-Fi connectivity",
+        "8+ hour battery"
+      ],
+      "asset": null
+    }
+  ],
+  "heroAsset": null,
+  "brandRules": {
+    "colors": ["#7C3AED", "#111827", "#F9FAFB"],
+    "tone": "playful, nostalgic, modern",
+    "logo": "./brand/logo.png",
+    "visualStyle": "Clean product photography, soft studio lighting, minimal background, subtle shadows",
+    "background": "Light neutral gradient or brand color backdrop, uncluttered",
+    "composition": "Centered product, slightly angled perspective, focus on device details",
+    "negative": [
+      "no text",
+      "no watermarks",
+      "no third-party logos",
+      "no copyrighted characters"
+    ],    
+    "requiredDisclaimer": "Game titles shown are illustrative. No affiliation with console or game publishers."
+  },
+  "prohibitedTerms": [
+    "Nintendo",
+    "PlayStation",
+    "Xbox",
+    "Mario",
+    "Zelda",
+    "Pokémon"
+  ]
+}
