@@ -176,6 +176,8 @@ bun install
 
 **OpenAI API key** can be in a .env as `OPENAI_API_KEY` or `export` if you prefer.
 
+**Create `output` directory** - it is empty at start, not included by git.
+
 **Run workflow**
 
 ```
