@@ -1,0 +1,50 @@
+{
+  "brief": "play-anywhere.json",
+  "products": [
+    "PocketForge Mini",
+    "PocketForge XL"
+  ],
+  "outputs": [
+    "output/posts/pocketforge-mini/1x1.png",
+    "output/posts/pocketforge-mini/9x16.png",
+    "output/posts/pocketforge-mini/16x9.png",
+    "output/posts/pocketforge-xl/1x1.png",
+    "output/posts/pocketforge-xl/9x16.png",
+    "output/posts/pocketforge-xl/16x9.png"
+  ],
+  "reusedAssets": [
+    {
+      "name": "PocketForge Mini",
+      "positioning": "Ultra-pocketable retro handheld for quick nostalgic gaming sessions",
+      "features": [
+        "3.5\" IPS display",
+        "3000+ games supported",
+        "Wi-Fi connectivity",
+        "5+ hour battery"
+      ],
+      "asset": "pocketforge-mini.png",
+      "source": "input",
+      "path": "input/products/pocketforge-mini.png"
+    },
+    {
+      "name": "PocketForge XL",
+      "positioning": "Larger-screen handheld for extended play and travel comfort",
+      "features": [
+        "4.7\" IPS display",
+        "3000+ games supported",
+        "Wi-Fi connectivity",
+        "8+ hour battery"
+      ],
+      "asset": null,
+      "source": "generated",
+      "path": "output/generated/pocketforge-xl.png"
+    }
+  ],
+  "generatedAssets": [],
+  "hero": {
+    "source": "generated",
+    "path": "output/generated/hero-background.png"
+  },
+  "warnings": [],
+  "errors": []
+}

@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+    
+  <meta charset="utf-8" />    
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>LaunchForge</title>
+
+  <!-- Google Fonts: Open Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">  
+
+  <!-- Styles -->
+  <style>
+    html {
+      height: 100%;
+    }
+
+    body {
+      color: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Open Sans Variable', sans-serif;
+      font-size: 16px;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    button {
+      align-items: center;
+      appearance: none;
+      background: transparent;
+      border: solid 1px purple;
+      border-radius: 6px;
+      color: purple;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      font-family: 'Open Sans Variable', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      gap: 8px;
+      line-height: 24px;
+      margin: 0;
+      outline: none;
+      padding: 12px 16px 12px 16px;
+      transition: background 300ms ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:hover {
+      background: color-mix( in srgb, purple 25%, transparent );
+    }
+    
+    h1, p {
+      -moz-osx-font-smoothing: grayscale;            
+      -webkit-font-smoothing: antialiased;
+    }
+
+    footer {
+      align-items: center;
+      border-top: solid 1px lightgrey;
+      box-sizing: border-box;
+      gap: 8px;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    footer svg {
+      color: grey;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 48px;
+      margin: 0;
+      padding: 0;      
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 28px;
+      margin: 0;
+      padding: 0;      
+    }    
+
+    header {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      padding: 16px;
+    }
+
+    p {
+      line-height: 24px;
+      margin: 0;
+      padding: 0;
+    }
+
+    section {
+      border-top: solid 1px lightgrey;
+      margin: 16px 16px 0 16px;
+      padding: 16px 0 16px 0;
+    }
+
+    #results {
+      gap: 16px;
+      list-style: none;
+      padding: 0;
+      margin: 0 16px 0 16px;
+    }
+
+    #results li:last-of-type svg {
+      color: limegreen;
+    }
+
+    .assets {
+      gap: 16px;
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 16px 0;
+    }
+
+    .light {
+      color: grey;
+    }
+
+    .grow {
+      flex-basis: 0;
+      flex-grow: 1;
+    }
+
+    .horizontal {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .vertical {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+
+</head>
+<body>
+  
+  <!-- Header -->
+  <header>
+
+    <!-- Title -->
+    <div class="grow vertical">
+      <h1>
+        <span>Campaign Results</span>
+      </h1>
+      <p class="light">Your campaign assets are ready to download.</p>
+    </div>
+
+    <!-- Download -->
+    <button type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="currentColor"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/></g></svg>              
+      <span>Download all</span>
+    </button>
+
+  </header>
+
+  <!-- Results -->
+  <ul class="horizontal" id="results">
+
+    <!-- Products -->
+    <li class="grow">
+      <lf-result-card footer="Mini, XL" header="Products" id="products" label="2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2zm3.564 1.426L5.596 5L8 5.961L14.154 3.5zm3.25 1.7l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z"/></svg>        
+      </lf-result-card>
+    </li>
+
+    <!-- Formats -->
+    <li class="grow"">
+      <lf-result-card footer="1:1, 9:16, 16:9" header="Formats" id="formats" label="3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="currentColor"><path d="M6.002 5.5a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0"/><path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71l-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1z"/></g></svg>
+      </lf-result-card>
+    </li>
+
+    <!-- Deliverables -->
+    <li class="grow">
+      <lf-result-card footer="ads total" header="Deliverables" id="deliverables" label="6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5M5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1z"/><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"/></g></svg>
+      </lf-result-card>
+    </li>        
+
+    <!-- Status -->
+    <li class="grow">
+      <lf-result-card footer="May 12, 2026 at 2:34 PM" header="Status" id="status" label="Completed">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="currentColor"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="m10.97 4.97l-.02.022l-3.473 4.425l-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/></g></svg>
+      </lf-result-card>
+    </li>            
+
+  </ul>
+  
+  <!-- Assets -->
+  <section class="grow vertical">
+
+    <!-- Title -->
+    <h2>Generated Assets <span>(6)</span></h2>
+
+    <!-- Output -->
+    <div class="vertical"></div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="horizontal">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.338 1.59a61 61 0 0 0-2.837.856a.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025a1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453a7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625a11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43A63 63 0 0 1 5.072.56"/><path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/></g></svg>    
+    <p class="light">All processing happens locally. Your data stays private.</p>
+  </footer>
+
+  <!-- Components -->
+  <script src="./script/asset-card.js" type="module"></script>
+  <script src="./script/result-card.js" type="module"></script>
+
+  <!-- Application -->
+  <script>
+    // Build ratios lookup
+    const RATIOS = {
+      '1x1': {width: 1024, height: 1024},
+      '9x16': {width: 1080, height: 1920},
+      '16x9': {width: 1920, height: 1080}
+    };
+
+    const assets = document.querySelector( 'section div' );
+    const boxDeliverables = document.querySelector( '#deliverables' );
+    const boxFormats = document.querySelector( '#formats' );
+    const boxProducts = document.querySelector( '#products' );
+    const boxStatus = document.querySelector( '#status' );
+
+    // Load report file
+    async function loadReport( file ) {
+      return fetch( `/output/${file}` ).then( ( response ) => response.json() );
+    }
+
+    // Load available reports
+    async function loadReports() {
+      return fetch( '/api/report' ).then( ( response ) => response.json() );
+    }
+
+    // Generate slug from product name
+    function slugify( value ) {
+      return value
+        .toLowerCase()
+        .replace( /[^a-z0-9]+/g, '-' )    // Any sequence of characters that are not letters or numbers
+        .replace( /(^-|-$)/g, '' );       // Clear hyphen at the beginning or the end    
+    }
+
+    // Main
+    // Populate report
+    async function main() {
+      // Load respective data
+      const reports = await loadReports();
+      const report = await loadReport( reports[0] );
+
+      // Expand outputs
+      report.outputs = report.outputs.map( ( item ) => {
+        // Find ratio
+        let start = item.lastIndexOf( '/' ) + 1;
+        let end = item.lastIndexOf( '.' );
+
+        // Break down ratio parts
+        let ratio = item.substring( start, end );
+        const dimensions = `${RATIOS[ratio].width} x ${RATIOS[ratio].height}`;
+        ratio = ratio.replace( 'x', ':' );
+
+        // Return parts
+        return {
+          dimensions,
+          ratio,
+          source: item
+        };
+      } );
+
+      // Expand products
+      report.products = report.products.map( ( item ) => {
+        // Match of file slug
+        const slug = slugify( item );
+
+        // Return parts
+        return {
+          header: item,
+          assets: report.outputs.filter( ( value ) => value.source.indexOf( slug ) >= 0 )
+        }
+      } );
+
+      // Report header
+
+      // Products
+      boxProducts.label = report.products.length;
+      boxProducts.footer = report.products.map( ( item ) => item.header ).join( ', ' );
+
+      // Formats
+      const ratios = Object.keys( RATIOS );
+      boxFormats.label = ratios.length;
+
+      let formats = [];
+      for( const ratio of ratios ) {
+        const parts = ratio.split( 'x' );
+        formats.push( `${parts[0]}:${parts[1]}` );
+      }
+      boxFormats.footer = formats.join( ', ' );
+
+      // Deliverables
+      boxDeliverables.label = report.outputs.length;
+
+      // Status
+      const formatDate = new Intl.DateTimeFormat( navigator.language, {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric'
+      } );
+      const date = formatDate.format( new Date() );
+      const formatTime = new Intl.DateTimeFormat( navigation.language, {
+        hour: 'numeric', 
+        minute: 'numeric', 
+        hour12: true
+      } );
+      const time = formatTime.format( new Date() );      
+      boxStatus.footer = `${date} at ${time}`;
+
+      // Build assets display
+      // Based on products
+      for( const product of report.products ) {
+        // List
+        const list = document.createElement( 'ul' );
+        list.classList.add( 'assets' );        
+        list.classList.add( 'horizontal' );
+
+        for( const asset of product.assets ) {
+          // With item
+          const item = document.createElement( 'li' );
+          item.classList.add( 'grow' );
+
+          // With asset card
+          const card = document.createElement( 'lf-asset-card' );
+          card.header = product.header;
+          card.ratio = asset.ratio;
+          card.dimensions = asset.dimensions;
+          card.source = asset.source;
+
+          item.appendChild( card );
+          list.appendChild( item );        
+        }
+
+        assets.appendChild( list );      
+      }
+
+      console.log( report );
+    }
+
+    // Start
+    main();
+  </script>
+
+</body>
+</html>

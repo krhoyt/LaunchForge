@@ -116,4 +116,49 @@ async function main() {
   }  
 }
 
+// Alternative web view
+if( Bun.argv.includes( '--serve' ) ) {
+  const server = Bun.serve( {
+    port: 3000,
+    async fetch( req ) {
+      const url = new URL( req.url );
+      const pathname = url.pathname;
+
+      // API
+      if( pathname.startsWith( '/api/' ) ) {
+        if( pathname === '/api/report' && req.method === 'GET' ) {
+          const reports = await readdir( './output' );
+          return Response.json( reports.filter( ( item ) => item.endsWith( '.json' ) ) );
+        }
+
+        return new Response( 'Not Found', {status: 404} );
+      }
+
+      // Serve output files
+      if( pathname.startsWith( '/output/' ) ) {
+        const relativePath = pathname.replace( '/output/', '' );
+        const file = Bun.file( `./output/${relativePath}` );
+        if( await file.exists() ) {
+          return new Response( file );
+        }
+
+        return new Response( 'Not Found', {status: 404} );
+      }      
+
+      // Static
+      let filePath = pathname === '/' ? '/index.html' : pathname;
+      const file = Bun.file( `public${filePath}` );
+      if( await file.exists() ) {
+        return new Response( file );
+      }
+
+      // Fallback
+      return new Response( Bun.file( './public/index.html' ) );
+    }
+  } );
+
+  console.log( `→ Server running at ${server.url}` );  
+}
+
+// Main CLI process
 await main();
