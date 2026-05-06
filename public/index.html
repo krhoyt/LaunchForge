@@ -30,33 +30,28 @@
       padding: 0;
     }
 
-    button {
+    a {
       align-items: center;
-      appearance: none;
-      background: transparent;
       border: solid 1px purple;
       border-radius: 6px;
       color: purple;
-      cursor: pointer;
       display: flex;
       flex-direction: row;
-      font-family: 'Open Sans Variable', sans-serif;
-      font-size: 16px;
       font-weight: 600;
       gap: 8px;
       line-height: 24px;
       margin: 0;
-      outline: none;
       padding: 12px 16px 12px 16px;
+      text-decoration: none;
       transition: background 300ms ease;
       -webkit-tap-highlight-color: transparent;
     }
 
-    button:hover {
+    a:hover {
       background: color-mix( in srgb, purple 25%, transparent );
     }
     
-    h1, p {
+    h1, h2, p {
       -moz-osx-font-smoothing: grayscale;            
       -webkit-font-smoothing: antialiased;
     }
@@ -173,10 +168,10 @@
     </div>
 
     <!-- Download -->
-    <button type="button">
+    <a id="archive" href="" download>
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="currentColor"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/></g></svg>              
       <span>Download all</span>
-    </button>
+    </a>
 
   </header>
 
@@ -248,9 +243,14 @@
     const boxFormats = document.querySelector( '#formats' );
     const boxProducts = document.querySelector( '#products' );
     const boxStatus = document.querySelector( '#status' );
+    const lnkArchive = document.querySelector( '#archive' );
 
     // Load report file
     async function loadReport( file ) {
+      // Make archive available
+      const archive = file.replace( 'json', 'tar.gz' ).replace( 'report', 'assets' );
+      lnkArchive.href = `/output/${archive}`;
+
       return fetch( `/output/${file}` ).then( ( response ) => response.json() );
     }
 
@@ -273,6 +273,8 @@
       // Load respective data
       const reports = await loadReports();
       const report = await loadReport( reports[0] );
+
+      console.log( report );
 
       // Expand outputs
       report.outputs = report.outputs.map( ( item ) => {
@@ -326,18 +328,19 @@
       boxDeliverables.label = report.outputs.length;
 
       // Status
+      const completed = new Date( report.completedAt );
       const formatDate = new Intl.DateTimeFormat( navigator.language, {
         month: 'short',
         day: 'numeric',
         year: 'numeric'
       } );
-      const date = formatDate.format( new Date() );
+      const date = formatDate.format( completed );
       const formatTime = new Intl.DateTimeFormat( navigation.language, {
         hour: 'numeric', 
         minute: 'numeric', 
         hour12: true
       } );
-      const time = formatTime.format( new Date() );      
+      const time = formatTime.format( completed );      
       boxStatus.footer = `${date} at ${time}`;
 
       // Build assets display
